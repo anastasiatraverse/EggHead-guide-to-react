@@ -5,6 +5,30 @@
     <title>Lesson 9</title>
 </head>
 <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
 
+        function CharacterCount({text}){
+            const length = text.length ? text.length : `No`
+            return (
+                <div>
+                    {`The text "${Text}" has`}{text.length ? <strong>{text.length}</strong> : 'No'}
+                    {' characters'}
+                </div>
+            )
+        }
+
+        const element = (
+            <div>
+                <CharacterCount text="Hello World"/>
+                <CharacterCount text=""/>
+            </div>
+        )
+
+        ReactDOM.render(element, document.getElementById('root'))
+    </script>
 </body>
 </html>
